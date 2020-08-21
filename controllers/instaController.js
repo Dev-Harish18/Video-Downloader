@@ -21,8 +21,7 @@ exports.download = async function (req, res, next) {
             type,
             site,
             poster,
-            description,
-            html: html.data
+            description
         }
         next()
     } catch (e) {
