@@ -7,7 +7,7 @@ exports.download = async function (req, res, next) {
     try {
         const html = await axios.get(req.body.url)
         const $ = cheerio.load(html.data)
-        //console.log(html.data)
+
         const videoLink = $("meta[property='og:video']").attr("content")
         const poster = $("meta[property='og:image']").attr("content")
         const type = $("meta[property='og:type']").attr("content")
