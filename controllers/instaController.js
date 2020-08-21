@@ -11,11 +11,34 @@ exports.download = async function (req, res, next) {
         })
         const $ = cheerio.load(html.data)
 
-        const videoLink = $("meta[property='og:video']").attr("content")
-        const poster = $("meta[property='og:image']").attr("content")
-        const type = $("meta[property='og:type']").attr("content")
-        const site = $("meta[property='og:site_name']").attr("content")
-        const description = $("meta[property='og:description']").attr("content")
+        // const videoLink = $("meta[property='og:video']").attr("content")
+        // const poster = $("meta[property='og:image']").attr("content")
+        // const type = $("meta[property='og:type']").attr("content")
+        // const site = $("meta[property='og:site_name']").attr("content")
+        // const description = $("meta[property='og:description']").attr("content")
+
+        var meta = $('meta')
+        var keys = Object.keys(meta)
+
+        var ogType;
+        var ogTitle;
+
+        keys.forEach(function (key) {
+            if (meta[key].attribs &&
+                meta[key].attribs.property &&
+                meta[key].attribs.property === 'og:type') {
+                ogType = meta[key].attribs.content;
+            }
+        });
+
+        keys.forEach(function (key) {
+            if (meta[key].attribs &&
+                meta[key].attribs.property &&
+                meta[key].attribs.property === 'og:title') {
+                ogTitle = meta[key].attribs.content;
+            }
+        });
+
         // res.locals.data = {
         //     videoLink,
         //     type,
@@ -24,15 +47,11 @@ exports.download = async function (req, res, next) {
         //     description
         // }
         res.status(200).json({
-            H: 'Hi',
-            link: videoLink,
-            t: type,
-            s: site,
-            p: poster,
-            d: description,
+            ogTitle,
+            ogType,
             html: html.data
         })
-        next()
+        //next()
     } catch (e) {
         console.log('axiosError:', e.message)
         res.status(200).json({
