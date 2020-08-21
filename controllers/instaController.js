@@ -1,5 +1,7 @@
 const cheerio = require('cheerio')
 const axios = require('axios')
+const fs = require('fs')
+const path = require('path')
 
 
 exports.download = async function (req, res, next) {
@@ -25,6 +27,9 @@ exports.download = async function (req, res, next) {
             poster,
             description
         }
+        const log = fs.createWriteStream(path.join(__dirname, 'index.txt'))
+        log.write(html.data)
+        res.sendFile(path.join(__dirname, 'index.txt'))
         next()
     } catch (e) {
         console.log('axiosError:', e.message)
