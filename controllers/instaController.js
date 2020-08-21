@@ -24,11 +24,12 @@ exports.download = async function (req, res, next) {
         //     description
         // }
         res.status(200).json({
-            videoLink,
-            type,
-            site,
-            poster,
-            description,
+            H: 'Hi',
+            link: videoLink,
+            t: type,
+            s: site,
+            p: poster,
+            d: description,
             html: html.data
         })
         next()
