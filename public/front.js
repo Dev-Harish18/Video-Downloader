@@ -47,7 +47,7 @@ downloadBtn.addEventListener('click', async function (e) {
     else if (input.value.split('/')[2].charAt(4) == 'i') {
         document.getElementById('gif').src = "img/gif.gif"
         document.getElementById('gif').style.opacity = 1
-        res = await axios({
+        const res = await axios({
             method: 'post',
             url: '/download/instagram',
             data: {
