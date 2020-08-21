@@ -5,11 +5,6 @@ const axios = require('axios')
 exports.download = async function (req, res, next) {
 
     try {
-        delete process.env['http_proxy'];
-        delete process.env['HTTP_PROXY'];
-        delete process.env['https_proxy'];
-        delete process.env['HTTPS_PROXY'];
-
         const html = await axios({
             method: 'get',
             url: req.body.url
