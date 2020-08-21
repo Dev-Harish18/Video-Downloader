@@ -3,9 +3,12 @@ const axios = require('axios')
 
 
 exports.download = async function (req, res, next) {
-    // console.log(req.body)
+
     try {
-        const html = await axios.get(req.body.url)
+        const html = await axios({
+            method: 'get',
+            url: req.body.url
+        })
         const $ = cheerio.load(html.data)
 
         const videoLink = $("meta[property='og:video']").attr("content")
@@ -27,7 +30,7 @@ exports.download = async function (req, res, next) {
             error: "error"
         })
     }
-    //const videoLink = $('meta[property=og:video]').attr('content')
+
 
 
 }
