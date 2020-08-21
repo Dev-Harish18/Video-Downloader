@@ -54,7 +54,7 @@ downloadBtn.addEventListener('click', async function (e) {
                 url: input.value
             }
         })
-        console.log(res.data)
+        //console.log(res.data)
 
         if (res.data) {
             gsap.set('.form', {
@@ -92,7 +92,7 @@ downloadBtn.addEventListener('click', async function (e) {
                 link: input.value
             }
         })
-        console.log(res.data)
+        // console.log(res.data)
         if (res.data.error) {
             document.getElementById('gif').src = ""
             flash('danger', res.data.error)

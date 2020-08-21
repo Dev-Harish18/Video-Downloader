@@ -3,9 +3,6 @@ const ffmpeg = require('ffmpeg-static')
 const {
     spawn
 } = require('child_process');
-const {
-    availableFormats
-} = require('fluent-ffmpeg');
 
 
 const tracker = {
