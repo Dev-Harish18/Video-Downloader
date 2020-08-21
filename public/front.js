@@ -54,7 +54,7 @@ downloadBtn.addEventListener('click', async function (e) {
                 url: input.value
             }
         })
-        //console.log(res.data)
+        console.log(res.data)
 
         if (!res.data.error) {
             gsap.set('.form', {
