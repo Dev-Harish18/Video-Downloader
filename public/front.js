@@ -44,8 +44,7 @@ downloadBtn.addEventListener('click', async function (e) {
 
     if (input.value == '')
         flash('danger', 'Please paste your link')
-    else if (input.value.substring(0, 8) === 'https://' || input.value.substring(0, 7) === 'http://' ||
-        input.value.substring(0, 21) === 'https://www.instagram' || input.value.substring(0, 20) === 'http://www.instagram.com') {
+    else if (input.value.split('/')[2].charAt(4) == 'i') {
         document.getElementById('gif').src = "img/gif.gif"
         document.getElementById('gif').style.opacity = 1
         const res = await axios({
