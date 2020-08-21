@@ -21,8 +21,11 @@ app.use(function (err, req, res, next) {
         error: 'Something went wrong'
     })
 })
-
-app.listen(3000, () => {
+process.on('SIGTERM', () => {
+    console.log('Process Terminated')
+    app.close()
+})
+app.listen(port, () => {
     console.log("App started Listening at port" + process.env.PORT)
 })
 
