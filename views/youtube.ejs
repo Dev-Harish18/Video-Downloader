@@ -1,0 +1,78 @@
+<%  if(Object.keys(data.formats).length){%>
+
+<div id='btnContainer' class="col-12">
+    <h1 class='text-center my-5'>Please select the quality</h1>
+    <div class="row d-flex justify-content-center align-items-center">
+        <%  data.formats.forEach(obj => {%>
+
+        <%if(data.formats.indexOf(obj)<=2){%>
+        <div class="col-12 col-lg-3 text-center p-0 p-lg-2 m-0 m-lg-2">
+            <button class='btn btnQuality m-2' data-itag='<%=obj.itag%>'>
+                <% if(obj.quality){%>
+                <%= obj.quality%> Mp4
+                (<%= ((obj.size*1 +2+ data.Size*1).toFixed(1))%> MB)
+                <%}else{%>
+                128 Kbps Mp3
+                (<%= (obj.size*1).toFixed(1)%> MB)
+                <%}%>
+                </button>
+                
+            </div>
+           
+    <%}%>
+
+
+                <%})%>
+        </div>
+
+        <div class="row d-flex justify-content-center align-items-center mb-5">
+            <%  data.formats.forEach(obj => {%>
+            <%if(data.formats.indexOf(obj)>2){%>
+
+            <div class="col-12 col-lg-3 text-center p-0 p-lg-2 m-0 m-lg-2">
+                <button class='btn btnQuality m-2' data-itag='<%=obj.itag%>'>
+                    <% if(obj.quality){%>
+                    <%= obj.quality%> Mp4
+                    (<%= ((obj.size*1 +2+ data.Size*1).toFixed(1))%> MB)
+                    <%}else{%>
+                    128 Kbps Mp3
+                    (<%= (obj.size*1).toFixed(1)%> MB)
+                    <%}%>
+                </button>
+                
+            </div>
+            <%}%>
+                    <%})%>
+            </div>
+        </div>
+        <%}%>
+
+
+            <% if(Object.keys(data.videoDetails).length){ %>
+        <div id='youtube-details' class="col-12 p-1 p-lg-3">
+            <h2 class="text-center">Details</h2>
+            <% if(data.videoDetails.title) { %>
+            <div class="row justify-content-center align-items-center my-4">
+                <div class="col">Title</div>
+                <div class="col" id="type"><%= data.videoDetails.title%></div>
+            </div>
+            <hr>
+            <%}%>
+           
+        <% if(data.videoDetails.description) { %>
+            <div class="row justify-content-center align-items-center my-4">
+                <div class="col">Description</div>
+                <div class="col" id="ytube-desc">
+                    <%= data.videoDetails.description%></div>
+            </div>
+            <hr>
+            <%}%>
+        <% if(data.videoDetails.Length) { %>
+            <div class="row justify-content-center align-items-center my-4">
+                <div class="col">Length</div>
+                <div class="col"><%= data.videoDetails.Length%></div>
+            </div>
+            <hr>
+            <%}%>
+    </div>
+    <%}%>

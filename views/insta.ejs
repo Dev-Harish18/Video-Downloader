@@ -1,0 +1,26 @@
+<%if(data.videoLink){%>
+
+<div class="col-12 mx-auto p-3 p-lg-3 mb-5">
+    <h3 class="text-center">Long Press/Right Click the Video to download :)</h3>
+</div>
+<div class="col-12 mx-auto p-3 p-lg-3 video">
+    <video id="video" src="<%= data.videoLink%>" controls type="<%= data.type%>" poster="<%=data.poster%>"
+        class="mx-auto" playsinline></video>
+</div>
+<div class="col-12 insta-details p-1 p-lg-3">
+    <h2 class="text-center">Info</h2>
+    <div class="row justify-content-center align-items-center my-4">
+        <div class="col">Type</div>
+        <div class="col" id="type"><%= data.site%> <%= data.type%></div>
+    </div>
+    <hr>
+    <div class="row justify-content-center align-items-center">
+        <div class="col">Description</div>
+        <div class="col" id="desc"><%= data.description%></div>
+    </div>
+</div>
+<%}else{%>
+<div class="col-12 insta-details  p-1 p-lg-3 d-flex align-items-center justify-content-center">
+    <h3 class="text-center">Sorry No Such Video :(</h3>
+</div>
+<%}%>    
