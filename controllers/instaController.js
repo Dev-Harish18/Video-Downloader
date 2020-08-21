@@ -3,7 +3,7 @@ const axios = require('axios')
 
 
 exports.download = async function (req, res, next) {
-    console.log(req.body)
+    // console.log(req.body)
     try {
         const html = await axios.get(req.body.url)
         const $ = cheerio.load(html.data)
