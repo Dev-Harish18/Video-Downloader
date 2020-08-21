@@ -17,28 +17,7 @@ exports.download = async function (req, res, next) {
         // const site = $("meta[property='og:site_name']").attr("content")
         // const description = $("meta[property='og:description']").attr("content")
 
-        var meta = $('meta')
-        var keys = Object.keys(meta)
-
-        var ogType;
-        var ogTitle;
-
-        keys.forEach(function (key) {
-            if (meta[key].attribs &&
-                meta[key].attribs.property &&
-                meta[key].attribs.property === 'og:type') {
-                ogType = meta[key].attribs.content;
-            }
-        });
-
-        keys.forEach(function (key) {
-            if (meta[key].attribs &&
-                meta[key].attribs.property &&
-                meta[key].attribs.property === 'og:title') {
-                ogTitle = meta[key].attribs.content;
-            }
-        });
-
+        const description = $("meta[name='robots']").attr("content")
         // res.locals.data = {
         //     videoLink,
         //     type,
@@ -47,9 +26,7 @@ exports.download = async function (req, res, next) {
         //     description
         // }
         res.status(200).json({
-            ogTitle,
-            ogType,
-            html: html.data
+            description
         })
         //next()
     } catch (e) {
