@@ -33,7 +33,7 @@ process.on('SIGTERM', () => {
     app.close()
 })
 app.listen(port, () => {
-    console.log("App started Listening at port" + process.env.PORT)
+    console.log("App started Listening at port" + port)
 })
 
 module.exports = app
