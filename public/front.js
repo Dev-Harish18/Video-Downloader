@@ -76,8 +76,11 @@ downloadBtn.addEventListener('click', async function (e) {
                 duration: 0.2,
                 rotationY: 180
             })
-        } else
+        } else {
+            document.getElementById('gif').src = "img/gif.gif"
             flash('danger', 'Invalid Instagram video link')
+        }
+
     } else if (input.value.split('/')[2].charAt(0) == 'y') {
         document.getElementById('gif').src = "img/gif.gif"
         document.getElementById('gif').style.opacity = 1
@@ -91,6 +94,7 @@ downloadBtn.addEventListener('click', async function (e) {
         })
         console.log(res.data)
         if (res.data.error) {
+            document.getElementById('gif').src = "img/gif.gif"
             flash('danger', res.data.error)
         } else {
             gsap.set('.form', {
@@ -122,29 +126,13 @@ downloadBtn.addEventListener('click', async function (e) {
                 x: 20,
                 ease: 'power4'
             }, '-=0.4')
-            // document.getElementById('container').addEventListener('click', function (e) {
-
-            //     console.log({
-            //         e
-            //     })
-            //     if (e.target.classList.contains('btnQuality')) {
-            //         e.preventDefault()
-
-            //         const btn = e.target
-            //         const itag = btn.getAttribute('data-itag')
-            //         const link = window.localStorage.getItem('link')
-
-            //         window.location.href = `/download?link=${link}&itag=${itag}`
-            //     }
-            // })
-
-
-
-
         }
 
-    } else
+    } else {
+        document.getElementById('gif').src = "img/gif.gif"
         flash('danger', 'Invalid Link')
+    }
+
 
 })
 
