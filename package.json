@@ -21,9 +21,13 @@
   "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon app.js"
+    "start": "node app.js",
+    "dev": "nodemon app.js"
   },
   "keywords": [],
   "author": "",
+  "engines": {
+    "node": ">=10.0.0"
+  },
   "license": "ISC"
 }

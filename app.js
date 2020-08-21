@@ -3,7 +3,7 @@ const bodyParser = require('body-parser')
 
 const router = require('./router')
 const app = express()
-
+const port = process.env.PORT || 3000
 app.use(express.json())
 app.use(bodyParser.urlencoded({
     extended: false
@@ -23,7 +23,7 @@ app.use(function (err, req, res, next) {
 })
 
 app.listen(3000, () => {
-    console.log("App started Listening at port 3000")
+    console.log("App started Listening at port" + process.env.PORT)
 })
 
 module.exports = app
