@@ -1,6 +1,5 @@
 const ytdl = require('ytdl-core')
 const ffmpeg = require('ffmpeg-static')
-const readline = require('readline');
 const {
     spawn
 } = require('child_process');
