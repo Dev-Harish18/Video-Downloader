@@ -11,27 +11,27 @@ router.get('/download', youtubeController.getVideo)
 
 
 function home(req, res) {
-    console.log('Home')
+    //console.log('Home')
     data = res.locals.data ? res.locals.data : {}
-    console.log(data)
+    //console.log(data)
     res.render('index', {
         data
     })
 }
 
 function youtube(req, res) {
-    console.log('Youtube')
+    //console.log('Youtube')
     data = res.locals.data ? res.locals.data : {}
-    console.log(data)
+    //console.log(data)
     res.render('youtube', {
         data
     })
 }
 
 function insta(req, res) {
-    console.log('Insta')
+    //console.log('Insta')
     data = res.locals.data ? res.locals.data : {}
-    console.log(data)
+    //console.log(data)
     res.render('insta', {
         data
     })
