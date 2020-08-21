@@ -27,16 +27,16 @@ const tracker = {
 };
 
 exports.sendInfo = async function (req, res, next) {
-    console.log(req.body)
+    //console.log(req.body)
     const link = req.body.link
     if (ytdl.validateURL(req.body.link)) {
-        console.log('Valid URL')
+        //  console.log('Valid URL')
         const videoId = ytdl.getURLVideoID(req.body.link)
-        console.log({
-            videoId
-        })
+        // console.log({
+        //     videoId
+        // })
         if (ytdl.validateID(videoId)) {
-            console.log('Valid Video Id')
+            //console.log('Valid Video Id')
 
             try {
                 const info = await ytdl.getBasicInfo(req.body.link)
@@ -53,9 +53,9 @@ exports.sendInfo = async function (req, res, next) {
                         quality: obj.qualityLabel
                     }
                 })
-                console.log({
-                    formats
-                })
+                // console.log({
+                //     formats
+                // })
                 let videoDetails = {
                     title: info.videoDetails.title,
                     description: info.videoDetails.shortDescription,
@@ -65,7 +65,7 @@ exports.sendInfo = async function (req, res, next) {
                     isAgeRestricted: info.videoDetails.age_restricted
                 }
                 const Size = formats.filter(obj => obj.itag == 140)
-                console.log(videoDetails.Length)
+                // console.log(videoDetails.Length)
                 let min = Math.floor(videoDetails.Length * 1 / 60)
                 let hour = Math.floor(min / 60)
                 min %= 60
@@ -97,17 +97,12 @@ exports.sendInfo = async function (req, res, next) {
                     formats,
                     Size: Size[0].size
                 }
-
-                // res.status(200).json({
-                //     videoDetails
-                // })
                 next()
             } catch (e) {
-                console.log('ytdlError:', e)
+                // console.log('ytdlError:', e)
                 return res.status(200).json({
                     error: 'Something went Wrong'
                 })
-                // next(new Error('oops'))
             }
 
 

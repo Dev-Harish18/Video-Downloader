@@ -77,7 +77,7 @@ downloadBtn.addEventListener('click', async function (e) {
                 rotationY: 180
             })
         } else {
-            document.getElementById('gif').src = "img/gif.gif"
+            document.getElementById('gif').src = ""
             flash('danger', 'Invalid Instagram video link')
         }
 
@@ -94,7 +94,7 @@ downloadBtn.addEventListener('click', async function (e) {
         })
         console.log(res.data)
         if (res.data.error) {
-            document.getElementById('gif').src = "img/gif.gif"
+            document.getElementById('gif').src = ""
             flash('danger', res.data.error)
         } else {
             gsap.set('.form', {
@@ -129,7 +129,7 @@ downloadBtn.addEventListener('click', async function (e) {
         }
 
     } else {
-        document.getElementById('gif').src = "img/gif.gif"
+        document.getElementById('gif').src = ""
         flash('danger', 'Invalid Link')
     }
 
@@ -137,15 +137,17 @@ downloadBtn.addEventListener('click', async function (e) {
 })
 
 $('#link').on('focus', function (e) {
-    $('#input-container').addClass('--open')
-    $('#input-container').addClass('--focus')
-    $('#input-container').addClass('input-focus')
-    gsap.from('.input-focus', {
-        duration: 0.9,
-        scale: 1.5,
-        skewX: 360,
-        ease: 'back'
-    })
+    if (document.getElementById('link').value = "") {
+        $('#input-container').addClass('--open')
+        $('#input-container').addClass('--focus')
+        $('#input-container').addClass('input-focus')
+        gsap.from('.input-focus', {
+            duration: 0.9,
+            scale: 1.5,
+            skewX: 360,
+            ease: 'back'
+        })
+    }
 })
 $('#link').on('blur', function () {
     $('#input-container').removeClass('--focus')

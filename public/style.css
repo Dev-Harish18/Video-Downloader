@@ -9,7 +9,6 @@ body {
 }
 
 .footer {
-    /* background-color: #da8793; */
     color: #b8c1ec;
 }
 
@@ -223,17 +222,6 @@ button.btn:focus {
     }
 }
 
-/*.video {
-    opacity: 1;
-    display: block;
-    transition: opacity 0.5s ease-out;
-    -webkit-transition: opacity 0.5s ease-out;
-    -moz-transition: opacity 0.5s ease-out;
-    -ms-transition: opacity 0.5s ease-out;
-    -o-transition: opacity 0.5s ease-out;
-}*/
-
-
 .video video {
     display: flex;
     justify-content: center;
@@ -243,17 +231,6 @@ button.btn:focus {
     max-height: 90vh;
 
 }
-
-
-/* .insta-details.open {
-    opacity: 1;
-    display: block;
-    transition: all 0.5 ease-out;
-    -webkit-transition: all 0.5 ease-out;
-    -moz-transition: all 0.5 ease-out;
-    -ms-transition: all 0.5 ease-out;
-    -o-transition: all 0.5 ease-out;
-} */
 
 @media only screen and (max-width:992px) {
     .form {
@@ -268,9 +245,4 @@ button.btn:focus {
         font-size: 14px;
     }
 
-    /* .video.open {
-        width: 100%;
-        height: 100%;
-        opacity: 1;
-    } */
 }
