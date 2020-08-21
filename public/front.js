@@ -137,17 +137,16 @@ downloadBtn.addEventListener('click', async function (e) {
 })
 
 $('#link').on('focus', function (e) {
-    if (document.getElementById('link').value = "") {
-        $('#input-container').addClass('--open')
-        $('#input-container').addClass('--focus')
-        $('#input-container').addClass('input-focus')
-        gsap.from('.input-focus', {
-            duration: 0.9,
-            scale: 1.5,
-            skewX: 360,
-            ease: 'back'
-        })
-    }
+    $('#input-container').addClass('--open')
+    $('#input-container').addClass('--focus')
+    $('#input-container').addClass('input-focus')
+    gsap.from('.input-focus', {
+        duration: 0.9,
+        scale: 1.5,
+        skewX: 360,
+        ease: 'back'
+    })
+
 })
 $('#link').on('blur', function () {
     $('#input-container').removeClass('--focus')
