@@ -56,7 +56,7 @@ downloadBtn.addEventListener('click', async function (e) {
         })
         //console.log(res.data)
 
-        if (res.data) {
+        if (!res.data.error) {
             gsap.set('.form', {
                 transformStyle: 'preserve-3d'
             })

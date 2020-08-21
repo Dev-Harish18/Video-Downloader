@@ -23,6 +23,9 @@ exports.download = async function (req, res, next) {
         next()
     } catch (e) {
         console.log('axiosError:', e.message)
+        res.status(200).json({
+            error: "error"
+        })
     }
     //const videoLink = $('meta[property=og:video]').attr('content')
 
