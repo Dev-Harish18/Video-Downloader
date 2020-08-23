@@ -8,6 +8,10 @@ body {
     font-family: 'Montserrat';
 }
 
+html {
+    overflow-x: hidden;
+}
+
 .footer {
     color: #b8c1ec;
 }

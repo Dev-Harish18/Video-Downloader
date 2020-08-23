@@ -53,24 +53,24 @@
             <h2 class="text-center">Details</h2>
             <% if(data.videoDetails.title) { %>
             <div class="row justify-content-center align-items-center my-4">
-                <div class="col">Title</div>
-                <div class="col" id="type"><%= data.videoDetails.title%></div>
+                <div class="col-4 col-lg-3">Title</div>
+                <div class="col-8 col-lg-9" id="type"><%= data.videoDetails.title%></div>
             </div>
             <hr>
             <%}%>
            
         <% if(data.videoDetails.description) { %>
             <div class="row justify-content-center align-items-center my-4">
-                <div class="col">Description</div>
-                <div class="col" id="ytube-desc">
+                <div class="col-4 col-lg-3">Description</div>
+                <div class="col-8 col-lg-9 text-wrap" id="ytube-desc">
                     <%= data.videoDetails.description%></div>
             </div>
             <hr>
             <%}%>
         <% if(data.videoDetails.Length) { %>
             <div class="row justify-content-center align-items-center my-4">
-                <div class="col">Length</div>
-                <div class="col"><%= data.videoDetails.Length%></div>
+                <div class="col-4 col-lg-3">Length</div>
+                <div class="col-8 col-lg-9 text-wrap"><%= data.videoDetails.Length%></div>
             </div>
             <hr>
             <%}%>
