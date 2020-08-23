@@ -147,7 +147,7 @@ h4 {
     -o-transition: height 0.2s ease-in-out 0.5s, width 0.2s ease-in-out 0.4s;
 }
 
-button.btn {
+.btn {
     display: inline-block;
     font-weight: bold;
     text-align: center;
@@ -160,7 +160,7 @@ button.btn {
     height: 100%; */
 }
 
-button.btn:hover {
+.btn:hover {
     box-shadow: 0 0 15px #d88c97, 0 0 30px #d88c97;
     transform: translateY(-3px);
     transition: transform 0.1s ease-in-out;
